@@ -1,0 +1,288 @@
+/* ********************************************************************************************************************
+ * MrKristin's Simple CSS Form Styles
+ *
+ * The radio, checkbox, select, and range styles were copied (or heavily influenced) by other people's work. Since the
+ * CSS is available on public websites (articles/blogs/courses) fair use rights apply and URLs to the original material
+ * is documented.
+ *
+ * There are two types of form styles in this CSS
+ *   1. styles which are good enough to be considered cross browser compatible (darkblue and whitesmoke)
+ *   2. minimally styled elements (blue and white)
+ *
+ * Additionally lightcyan and lightblue were used for hovers and focus respectively
+ *********************************************************************************************************************/
+.mrk-form {}
+
+.mrk-form form{
+    margin: 1em 0;
+    padding: 1em;
+    color: darkblue;
+}
+
+.mrk-form legend {
+    margin-left: 5%;
+    font-style: italic;
+}
+
+.mrk-form label {
+    cursor: pointer;
+}
+
+.mrk-form input[type=text],
+.mrk-form input[type=email],
+.mrk-form input[type=search],
+.mrk-form input[type=password],
+.mrk-form input[type=url],
+.mrk-form input[type=number],
+.mrk-form textarea {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 4px;
+    margin: 4px 2px;
+    border: 1px solid darkblue;
+    background: linear-gradient(to bottom, honeydew 0%, whitesmoke 100%);
+}
+
+.mrk-form button,
+.mrk-form input[type=button],
+.mrk-form input[type=submit],
+.mrk-form input[type=reset] {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 0 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid darkblue;
+    box-shadow: -1px 2px darkblue;
+    color: darkblue;
+    background-color: whitesmoke;
+}
+
+.mrk-form button:active,
+.mrk-form input[type=button]:active,
+.mrk-form input[type=submit]:active,
+.mrk-form input[type=reset]:active {
+    box-shadow: 0px 1px darkblue;
+    transform: translateY(2px);
+}
+
+/*
+ * radio/check styling code/inspiration
+ * http://www.tipue.com/blog/radio-checkbox/
+ */
+.mrk-form input[type=radio],
+.mrk-form input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    height: 25px;
+    width: 25px;
+    border: 1px solid darkblue;
+    cursor: pointer;
+    margin: 2px 3px;
+    outline: none;
+    background-color: whitesmoke;
+}
+
+.mrk-form input[type=radio]:checked::before,
+.mrk-form input[type=checkbox]:checked::before {
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    content: '\02143';
+    transform: rotate(45deg);
+}
+
+.mrk-form input[type=radio] {
+    border-radius: 50px;
+}
+
+.mrk-form input[type=checkbox] {
+    border-radius: 3px;
+}
+
+.mrk-form input[type=radio]::-ms-check,
+.mrk-form input[type=checkbox]::-ms-check,
+.mrk-form input[type=radio]:checked,
+.mrk-form input[type=checkbox]:checked {
+    color: darkblue;
+}
+
+/*
+ * select styling code/inspiration
+ * https://www.filamentgroup.com/lab/select-css.html
+ */
+.mrk-form select {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 32px 8px 4px;
+    margin: 4px 2px;
+
+    color: darkblue;
+    background-color: whitesmoke;
+    border: 1px solid darkblue;
+
+    /* disable default dropdown arrow in browsers */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* use inline data uri to create dropdown arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, honeydew 0%, whitesmoke 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+.mrk-form select.multiple, .mrk-form .multiple {
+    height: 7em;
+    overflow: auto;
+    background: linear-gradient(to bottom, honeydew 0%, whitesmoke 100%);
+    border-radius: 0;
+    border: 1px solid darkblue;
+    width: 100%;
+}
+
+.mrk-form select::-ms-expand {
+    display: none;
+}
+
+.mrk-form select option {
+    font-weight: normal;
+    color: darkblue;
+}
+
+/*
+ * range styling code/inspiration
+ * https://www.w3schools.com/howto/howto_js_rangeslider.asp
+ */
+.mrk-form input[type=range] {
+    -webkit-appearance: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    height: 16px;
+    border-radius: 5px;
+    background: whitesmoke;
+    background-color: whitesmoke;
+    border: 1px solid darkblue;
+}
+
+.mrk-form input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: darkblue;
+    cursor: pointer;
+}
+
+.mrk-form input[type=range]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: darkblue;
+    cursor: pointer;
+}
+/* ********************************************************************************************************************
+ * Minimally styled elements not available on all browsers
+ * use plain blue/white to differentiate elements if they are used
+ *********************************************************************************************************************/
+.mrk-form input[type=file],
+.mrk-form input[type=image],
+.mrk-form input[type=color],
+.mrk-form input[type=week],
+.mrk-form input[type=tel],
+.mrk-form input[type=time],
+.mrk-form input[type=month],
+.mrk-form input[type=date],
+.mrk-form input[type=datetime-local] {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 4px;
+    margin: 4px 2px;
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+}
+
+
+/* ********************************************************************************************************************
+ * Simple Mobile Styles using Media queries
+ *********************************************************************************************************************/
+@media only screen and (max-width: 600px) {
+    .mrk-form textarea,
+    .mrk-form button,
+    .mrk-form input[type=button],
+    .mrk-form input[type=submit],
+    .mrk-form input[type=reset] {
+        width: 100%;
+        margin: 3px 0;
+    }
+    .mrk-form input[type=text],
+    .mrk-form input[type=email],
+    .mrk-form input[type=search],
+    .mrk-form input[type=password],
+    .mrk-form input[type=url],
+    .mrk-form input[type=number],
+    .mrk-form input[type=range],
+    .mrk-form textarea {
+        width: 98%;
+        padding: 11px 1%;
+        margin: 0;
+    }
+    .mrk-form select {
+        width: 100%;
+        max-width: 100%;
+    }
+    /* Media query for minimally styled elements not available on all browsers */
+    .mrk-form input[type=file],
+    .mrk-form input[type=image],
+    .mrk-form input[type=color],
+    .mrk-form input[type=week],
+    .mrk-form input[type=tel],
+    .mrk-form input[type=time],
+    .mrk-form input[type=month],
+    .mrk-form input[type=date],
+    .mrk-form input[type=datetime-local] {
+        width: 98%;
+        padding: 11px 1%;
+        margin: 0;
+    }
+}
+
+/* ********************************************************************************************************************
+ * cascade is in the name and order matters! this is last so it is always applied to ALL the form elements
+ *********************************************************************************************************************/
+.mrk-form input:hover,
+.mrk-form input[type=radio]:checked:hover,
+.mrk-form input[type=checkbox]:checked:hover,
+.mrk-form textarea:hover,
+.mrk-form button:hover {
+    box-shadow: 0 0 1px 3px lightcyan;
+    background: linear-gradient(to bottom, honeydew 0%, whitesmoke 100%);
+}
+
+.mrk-form button:focus,
+.mrk-form input:focus,
+.mrk-form textarea:focus {
+    box-shadow: 0 0 1px 3px lightblue;
+    background: linear-gradient(to bottom, honeydew 0%, whitesmoke 100%);
+    outline: none;
+}
+
+.mrk-form select:hover,
+.mrk-form select:focus {
+    /* disable default dropdown arrow in browsers */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    box-shadow: 0 0 1px 3px lightcyan;
+}
